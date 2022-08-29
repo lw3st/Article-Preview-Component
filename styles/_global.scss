@@ -1,0 +1,77 @@
+/* box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* make 1 rem = 10px */
+html {
+  font-size: 62.5%;
+  padding: 0;
+  margin: 0;
+}
+
+/* remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+}
+
+/* remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* remove default font styling */
+a, address {
+  text-decoration: none;
+  font-style: normal;
+}
+
+/* inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* remove border from fieldset and buttons */
+fieldset, button {
+  border: none;
+}
+
+/* remove all animations and transitions for people who prefer not to see them*/
+@media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* -- Variables -- */
+:root {
+    --main-font: Manrope, sans-serif;
+    --primary-very-dark: hsl(217, 19%, 35%);
+    --primary-dark: hsl(214, 17%, 51%);
+    --primary-med: hsl(212, 23%, 69%);
+    --primary-light: hsl(210, 46%, 95%);
+    --shadow-clr: hsla(212, 23%, 69%, 30%);
+}

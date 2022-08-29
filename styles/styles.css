@@ -1,0 +1,323 @@
+/* box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* make 1 rem = 10px */
+html {
+  font-size: 62.5%;
+  padding: 0;
+  margin: 0;
+}
+
+/* remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+}
+
+/* remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* remove default font styling */
+a, address {
+  text-decoration: none;
+  font-style: normal;
+}
+
+/* inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* remove border from fieldset and buttons */
+fieldset, button {
+  border: none;
+}
+
+/* remove all animations and transitions for people who prefer not to see them*/
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* -- Variables -- */
+:root {
+  --main-font: Manrope, sans-serif;
+  --primary-very-dark: hsl(217, 19%, 35%);
+  --primary-dark: hsl(214, 17%, 51%);
+  --primary-med: hsl(212, 23%, 69%);
+  --primary-light: hsl(210, 46%, 95%);
+  --shadow-clr: hsla(212, 23%, 69%, 30%);
+}
+
+body {
+  background: var(--primary-light);
+  font-family: var(--main-font);
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+main {
+  height: 62.5rem;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  text-align: center;
+  padding: 1.2rem 0;
+  color: var(--primary-dark);
+}
+footer a {
+  color: var(--primary-very-dark);
+  font-weight: 700;
+}
+
+article {
+  background: white;
+  border-radius: 1.2rem;
+  width: 32rem;
+  height: 47.8rem;
+  box-shadow: 0px 10px 10px var(--shadow-clr);
+}
+
+.article-image {
+  background: url(../images/drawers.jpg) no-repeat;
+  background-position: 50% 20%;
+  background-size: 100%;
+  border-radius: 1.2rem 1.2rem 0 0;
+  width: 100%;
+  height: 20.5rem;
+}
+
+.article-container {
+  padding: 3rem 3rem 1rem 3rem;
+  height: 29.5rem;
+}
+
+.article-content h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--primary-very-dark);
+  margin-bottom: 1.3rem;
+}
+.article-content p {
+  color: var(--primary-dark);
+}
+
+.article-info {
+  margin-top: 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+}
+
+.author-image {
+  background: url(../images/avatar-michelle.jpg) no-repeat;
+  background-size: 100%;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  margin-right: 1.5rem;
+}
+
+address {
+  display: flex;
+  flex-direction: column;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  line-height: 1.5;
+}
+address .author-name {
+  font-weight: 700;
+  color: var(--primary-very-dark);
+}
+address time {
+  color: var(--primary-med);
+}
+
+.share-button {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  z-index: 1;
+  filter: hue-rotate(0) invert(0) brightness(1);
+  transition: filter 0.4s ease-in-out;
+}
+
+.share-button:hover {
+  filter: hue-rotate(45deg) invert(0.8) brightness(2.5);
+  transition: filter 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.share-ul-box {
+  width: 32rem;
+  height: 7.3rem;
+  background: var(--primary-very-dark);
+  border-radius: 0 0 1.2rem 1.2rem;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  margin: 0 auto;
+  padding-left: 3.2rem;
+  transform: translateX(-3rem);
+}
+
+.share-box-arrow {
+  display: none;
+}
+
+.arrow-shadow {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.share-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 17rem;
+}
+.share-container span {
+  color: var(--primary-med);
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+}
+
+.share-options {
+  height: 100%;
+  width: 52%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.share-options img {
+  display: block;
+}
+
+@media screen and (min-width: 850px) {
+  main {
+    height: 90vh;
+    min-height: 40rem;
+  }
+  /* article component */
+  article {
+    width: 70rem;
+    height: 27.5rem;
+    display: flex;
+  }
+  .article-image {
+    height: 100%;
+    width: 70%;
+    background-size: cover;
+    border-radius: 1.2rem 0 0 1.2rem;
+  }
+  .article-container {
+    display: block;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 3rem 3.5rem 2rem 3.5rem;
+  }
+  .article-content {
+    height: 60%;
+  }
+  .article-content h1 {
+    font-size: 2rem;
+  }
+  .article-info {
+    margin-top: 3.8rem;
+  }
+  .share-ul-box {
+    width: 25rem;
+    height: 4.7rem;
+    border-radius: 1.2rem;
+    justify-content: center;
+    position: fixed;
+    transform: translateX(20.7rem) translateY(-7rem);
+    padding: 0;
+    box-shadow: 0px 6px 5px var(--shadow-clr);
+  }
+  .share-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 17rem;
+    margin: 0;
+  }
+  .hidden {
+    display: none;
+    width: 0;
+    transition: width 0.4s ease-in-out;
+  }
+  .share-box-arrow {
+    display: block;
+    content: "";
+    position: absolute;
+    left: 11.5rem;
+    bottom: -1.4rem;
+    width: 0;
+    height: 0;
+    border-left: 1.3rem solid transparent;
+    border-right: 1.3rem solid transparent;
+    border-top: 1.4rem solid var(--primary-very-dark);
+  }
+  .arrow-shadow {
+    display: block;
+    position: absolute;
+    left: 11.3rem;
+    bottom: -2.1rem;
+    width: 0;
+    height: 0;
+    border-left: 1.5rem solid transparent;
+    border-right: 1.5rem solid transparent;
+    border-top: 1.6rem solid var(--shadow-clr);
+    filter: blur(3px);
+  }
+}/*# sourceMappingURL=styles.css.map */

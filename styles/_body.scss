@@ -1,0 +1,27 @@
+body {
+    background: var(--primary-light);
+    font-family: var(--main-font);
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+main {
+    height: 62.5rem;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    padding: 1.2rem 0;
+    color: var(--primary-dark);
+
+    a {
+        color: var(--primary-very-dark);
+        font-weight: 700;
+    }
+}
